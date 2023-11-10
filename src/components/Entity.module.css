@@ -1,0 +1,6 @@
+.entity {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  border: 1px solid red;
+}

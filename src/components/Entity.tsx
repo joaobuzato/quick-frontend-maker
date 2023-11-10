@@ -1,5 +1,6 @@
 import React from "react";
 import EntityList from "./EntityList";
+import classes from "./Entity.module.css";
 
 interface DataItem {
   [key: string]: any;
@@ -10,12 +11,10 @@ interface Props {
 }
 
 function Entity({ data }: Props) {
-  console.log("ENTITY!!!!", data);
   let columns: string[] = Object.keys(data);
-  console.log(columns);
 
   return (
-    <div>
+    <div className={classes.entity}>
       {columns.map((column) => {
         return (
           <div key={column}>

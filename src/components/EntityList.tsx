@@ -18,7 +18,6 @@ function isSimpleType(item: any) {
 }
 
 function EntityList({ dataList }: Props) {
-  console.log("Entity List!", dataList);
   return (
     <div>
       {dataList.map((item) => {
