@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import ItemTable from "./components/UI/ItemTable";
+import EntityList from "./components/EntityList";
+import Entity from "./components/Entity";
 
 function App() {
   const [table, setTable] = useState(<></>);
@@ -30,7 +31,11 @@ function App() {
     setTable(
       <>
         <h1>{url}</h1>
-        <ItemTable onReturnCallback={closeTable} data={items}></ItemTable>
+        {Array.isArray(items) ? (
+          <EntityList dataList={items} />
+        ) : (
+          <Entity data={items} />
+        )}
       </>
     );
   };
