@@ -4,3 +4,10 @@
   gap: 30px;
   border: 1px solid red;
 }
+
+.column {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+}

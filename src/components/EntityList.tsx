@@ -9,23 +9,11 @@ interface Props {
   dataList: DataItem[];
 }
 
-function isSimpleType(item: any) {
-  return (
-    typeof item === "string" ||
-    typeof item === "number" ||
-    typeof item === "boolean"
-  );
-}
-
 function EntityList({ dataList }: Props) {
   return (
     <div>
       {dataList.map((item) => {
-        return isSimpleType(item) ? (
-          <div key={String(item)}>{String(item)}</div>
-        ) : (
-          <Entity key={item[0]} data={item}></Entity>
-        );
+        return <Entity key={item[0]} data={item}></Entity>;
       })}
     </div>
   );
