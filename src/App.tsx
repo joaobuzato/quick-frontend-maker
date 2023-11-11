@@ -52,21 +52,21 @@ function App() {
   return (
     <div className="App">
       {isTableOpen ? (
-        <>{table}</>
-      ) : (
         <>
-          <form onSubmit={submitHandler}>
-            <input
-              placeholder="url"
-              id="url"
-              type="text"
-              value={urlValue}
-              onChange={changeHandler}
-            ></input>
-            <button type="submit">Fazer Chamada</button>
-          </form>
+          {table}
           <button onClick={closeTable}>Voltar ao início</button>
         </>
+      ) : (
+        <form onSubmit={submitHandler}>
+          <input
+            placeholder="url"
+            id="url"
+            type="text"
+            value={urlValue}
+            onChange={changeHandler}
+          ></input>
+          <button type="submit">Fazer Chamada</button>
+        </form>
       )}
     </div>
   );
