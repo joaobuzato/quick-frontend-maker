@@ -19,17 +19,17 @@ function Entity({ data }: Props) {
     );
   }
   if (isSimpleType(data)) {
-    return <div key={String(new Date())}>{String(data)}</div>;
+    return <div key={String(new Date())} className={classes.data}>{String(data)}</div>;
   }
 
   let columns: string[] = Object.keys(data);
 
   return (
     <div className={classes.entity}>
-      {columns.map((column) => {
+      {columns.map((column,index) => {
         return (
-          <div key={column} className={classes.column}>
-            <div>{column}</div>
+          <div key={index} className={classes.column}>
+            <div className={classes.nameData}>{column}</div>
             {Array.isArray(data[column]) ? (
               <EntityList dataList={data[column]}></EntityList>
             ) : (

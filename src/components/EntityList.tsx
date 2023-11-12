@@ -1,5 +1,7 @@
 import React from "react";
 import Entity from "./Entity";
+import classes from "./Entity.module.css";
+
 
 interface DataItem {
   [key: string]: any;
@@ -11,9 +13,9 @@ interface Props {
 
 function EntityList({ dataList }: Props) {
   return (
-    <div>
-      {dataList.map((item) => {
-        return <Entity key={item[0]} data={item}></Entity>;
+    <div className={classes.list}>
+      {dataList.map((item, index) => {
+        return <Entity key={index} data={item}></Entity>;
       })}
     </div>
   );
