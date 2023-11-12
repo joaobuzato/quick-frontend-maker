@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import EntityList from "./components/EntityList";
 import Entity from "./components/Entity";
+import logo from "./logo-q.png"
 
 function App() {
   const [table, setTable] = useState(<></>);
@@ -29,21 +30,17 @@ function App() {
   const openTable = (url: string, items: any) => {
     setIsTableOpen(true);
     setTable(
-      <>
+      <div className="container">
         <h1>{url}</h1>
         {Array.isArray(items) ? (
           <EntityList dataList={items} />
         ) : (
           <Entity data={items} />
         )}
-      </>
+      </div>
     );
   };
 
-  const closeTable = () => {
-    setTable(<></>);
-    setIsTableOpen(false);
-  };
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUrlValue(event.currentTarget.value);
@@ -51,6 +48,9 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <img src={logo} alt="" />
+      </header>
       {isTableOpen ? (
         <>{table}</>
       ) : (
