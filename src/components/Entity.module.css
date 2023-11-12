@@ -2,6 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  padding: 6px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 22px;
+  
 }
 
 .entity {
@@ -9,9 +17,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 10px;
-  border: 1px solid red;
+  border-radius: 8px;
+  border: 6px solid rgba(255,101,80,0.33);
+  background:#fad6d6;
   width: auto;
+  margin-bottom: 6px;
 }
 
 .entity div {
@@ -19,7 +29,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 4px;
 }
 
 .list{
@@ -28,13 +37,17 @@ flex-direction: column;
 }
 
 .data{
-  background-color: aliceblue ;
+ 
 }
 .nameData{
-  background-color: blueviolet;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .column {
   padding-left: 10px;
-  border: 1px solid blue;
+  border: 6px solid rgba(137,80,255,0.33);
+  background: #e1d6fa;
+  border-radius: 8px;
+  margin-bottom: 6px;
 }
