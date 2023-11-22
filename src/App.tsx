@@ -52,7 +52,10 @@ function App() {
         <img src={logo} alt="" />
       </header>
       {isTableOpen ? (
-        <>{table}</>
+        <>
+          {table}
+          <button onClick={closeTable}>Voltar ao início</button>
+        </>
       ) : (
         <form onSubmit={submitHandler}>
           <input
