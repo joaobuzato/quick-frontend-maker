@@ -21,6 +21,7 @@ function App() {
     getFromServer(urlValue)
       .then((response) => {
         openTable(urlValue, response);
+        console.log(response)
       })
       .catch(() => {
         alert("deu merda");
@@ -40,6 +41,9 @@ function App() {
       </div>
     );
   };
+  const recarregarPagina = () => {
+    window.location.reload();
+  }
 
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,8 +57,9 @@ function App() {
       </header>
       {isTableOpen ? (
         <>
+        <button onClick={recarregarPagina}>Voltar ao início</button>
           {table}
-          <button onClick={closeTable}>Voltar ao início</button>
+          
         </>
       ) : (
         <form onSubmit={submitHandler}>
